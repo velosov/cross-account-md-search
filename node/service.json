@@ -1,0 +1,24 @@
+{
+    "memory": 256,
+    "ttl": 100,
+    "timeout": 180,
+    "minReplicas": 2,
+    "maxReplicas": 4,
+    "routes": {
+      "internal": {
+        "path": "/_v/vtex.logs-reader/v0/internal/:id",
+        "public": false,
+        "policies": [
+            {
+              "effect": "allow",
+              "actions": ["get"],
+              "principals": ["vrn:apps:*:*:*:app/vtex.logs-reader@0.*"]
+            }
+          ]
+      },
+      "external": {
+        "path": "/_v/vtex.logs-reader/v0/:account/:id",
+        "public": true
+      }
+    }
+  }

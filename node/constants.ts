@@ -1,0 +1,1 @@
+export const [slug, version] = (process.env.VTEX_APP_ID as string).split('@')

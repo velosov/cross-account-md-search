@@ -1,0 +1,28 @@
+{
+  "extends": "@vtex/tsconfig",
+  "compilerOptions": {
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types"],
+    "module": "commonjs",
+    "target": "es2017",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "outDir": "service",
+    "allowJs": false,
+    "noEmitOnError": true,
+    "allowSyntheticDefaultImports": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": true,
+    "strict": true
+  },
+  "include": ["./typings/*.d.ts", "./**/*.ts"],
+  "exclude": ["node_modules"]
+}
