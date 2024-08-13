@@ -6,7 +6,7 @@ import type {
 import { method, Service } from '@vtex/api'
 
 import { Clients } from './clients'
-import { internal, external } from './middlewares'
+import { internal, external, load } from './middlewares'
 
 const seg =  1000 //ms
 declare global {
@@ -37,7 +37,7 @@ export default new Service<Clients, State, ParamsContext>({
         GET: [internal],
       }),
       external: method({
-        GET: [external],
+        GET: [load, external],
       }),
     },
   })
