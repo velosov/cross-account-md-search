@@ -1,4 +1,4 @@
-// Interface for any VTEX Store you've got to particularly trigger an update event
+// Interface for any VTEX Store you've got to particularly run a query at
 import type { InstanceOptions, IOContext } from '@vtex/api'
 import { ExternalClient } from '@vtex/api'
 import { slug, version } from '../constants'
@@ -24,7 +24,7 @@ export class Target extends ExternalClient {
       return resp
     } catch(err) {
       this.context.logger.error({
-        message: 'Error triggering update at account:',
+        message: `Error calling account ${this.context.settings.target.account}:`,
         err,
       })
       throw new Error(JSON.stringify(err))
